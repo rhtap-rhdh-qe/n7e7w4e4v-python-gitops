@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: n7e7w4e4v-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: n7e7w4e4v-python 
+  name: n7e7w4e4v-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: n7e7w4e4v-python
+    weight: 100 
